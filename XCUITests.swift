@@ -3,7 +3,7 @@ import XCTest
 //import XCPlayground
 import Foundation
 
-class HSS_UI_Swift: XCTestCase {
+class TestApp_UI_Swift: XCTestCase {
     
     let waitForPopup = 1 //in seconds. For now: 1, potentially could be increased to 7
     let loginElite = ''
@@ -15,22 +15,13 @@ class HSS_UI_Swift: XCTestCase {
     let countries = XCUIApplication().menuBarItems["Connection"].menus.menuItems["Virtual Location"].menus
     
     override func setUp() {
-        super.setUp()
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+        super.setUp()        
         continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         app.launch()
-        
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-        
         closePopupWindows()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         signOut()
         super.tearDown()
     }
